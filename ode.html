@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title> Online Code Editor</title>
+<script>
+    function refresh(){
+        var editor_value=document.getElementById('editor-textarea').value;
+        document.getElementById('viewer').srcdoc=editor_value;
+    }
+    </script>
+    
+<style>
+   
+    h1{
+        text-align:center;
+        padding:10px;
+        background:purple;
+        color:white;
+        font-family:arial;
+    }
+    h1 a{
+        text-decoration:none;
+        font-family:cursive;
+        margin-left:10px;
+        color:red;
+
+    }
+    .main{
+        background:white;
+        width:100%;
+        height:95%;
+        display:inline-flex;
+
+    }
+    #editor-textarea{
+        width:100%;
+        height:95%;
+        margin:10px;
+        padding:10px;
+        background:black;
+        color:white;
+        font-family:cursive;
+        }
+        #viewer{
+            background:rgb(156, 243, 239);
+            border:darkviolet;
+            width:100%;
+            height: 400px;
+            margin:10px;
+            border:1px   solid blue;
+
+        }
+
+    .button{
+        width:100px;
+        color:white;
+        height:25px;
+        background-color:black;
+    }
+    .button:hover{
+        background-color:grey;
+        color:red;
+    }
+
+
+</style>
+
+
+</head>
+<body>
+<div class="header">
+<h1>ONLINE CODE EDITOR</h1>
+</div>
+<div class="topnav">
+<a><button class="button">file</button></a>
+<a><button class="button">view</button></a>
+<a><button class="button">edit</button></a>
+<a><button class="button">selection</button></a>
+<a><button class="button">help</button></a>
+</div>
+<div class="main">
+    <textarea  onkeyup="refresh()" 
+    id="editor-textarea"
+    placeholder="start coding..."></textarea>
+    <iframe id="viewer"></iframe>
+</div>
+</body>
+</html>
